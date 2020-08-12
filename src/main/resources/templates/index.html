@@ -1,0 +1,61 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+	<meta charset="UTF-8" />
+    <title>Web-app calculating</title>
+<!--	<link href="../resources/css/style.css" th:href="@{/css/style.css}" rel="stylesheet" />-->
+	<link rel="stylesheet" type="text/css" th:href="@{/css/style.css}"/>
+	<script type="text/javascript" th:src="@{js/mainJs.js}" src="js/mainJs.js"></script>
+
+</head>
+<body>
+<div id="container">
+	<div id="header">	
+		<h2>Web-app calculating</h2>
+	</div>
+		 
+	<div id="content">
+	
+		<br>
+
+		<form name="fileinfo">
+			<input type="file" name="file" required >
+			<button id='loadBtn'>Загрузить результат</button>
+		</form>
+
+
+		<button id='saveResult'>Сохранить результат</button>
+		
+		<button onclick="clearScreen()">Очистить экран</button>
+		
+		<br><br>
+			
+		<select id="chooseExample">
+			<option selected disabled value="" >Выберите задачу</option>
+			<option value="NumberExpanded">NumberExpanded</option>
+			<option value="LexicOrderArray">LexicOrderArray</option>		
+	   </select>
+	   
+		<br>
+		
+		<div>
+			<p id="labelEnter">Ввод данных:</p>
+			<p><textarea rows="10" cols="45" name="text" id="enterText" ></textarea></p>
+		</div>
+		
+		<div>
+			<p id="labelEnter1">Результат:</p>
+			<p><textarea rows="10" cols="45" name="text" id="resultText"></textarea></p>
+		</div>	
+		
+		<button onclick="calculate()">Посчитать</button>
+		
+		
+	</div>
+			 
+	<div id="clear"></div>
+								   
+	<div id="footer"></div>
+</div>
+</body>
+</html>
