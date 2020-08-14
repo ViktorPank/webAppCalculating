@@ -21,7 +21,7 @@ public class MainController {
     @Autowired
     public MainController(CalculationService calculationService) {
         this.calculationService = calculationService;
-    }
+    } 
 
     @PostMapping(value = "/calculate")
     public ResponseEntity<DTOCalculations> calculatingExample(@RequestBody DTOCalculations dtoCalculations) {

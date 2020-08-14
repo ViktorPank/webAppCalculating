@@ -1,6 +1,7 @@
 package com.pankin;
 
 import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.MultipartConfigFactory;
@@ -13,6 +14,7 @@ import org.springframework.util.unit.DataSize;
 import javax.servlet.MultipartConfigElement;
 
 @Configuration
+@EnableAutoConfiguration
 @ComponentScan
 @SpringBootApplication
 public class WebAppCalculatingApplication extends SpringBootServletInitializer {
