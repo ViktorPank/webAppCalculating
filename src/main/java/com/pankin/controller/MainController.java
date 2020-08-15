@@ -21,14 +21,24 @@ public class MainController {
     @Autowired
     public MainController(CalculationService calculationService) {
         this.calculationService = calculationService;
-    } 
+    }
 
+    /**
+     * Calculation of received data from the front
+     * @param dtoCalculations
+     * @return Server response status and calculation data
+     */
     @PostMapping(value = "/calculate")
     public ResponseEntity<DTOCalculations> calculatingExample(@RequestBody DTOCalculations dtoCalculations) {
         System.out.println();
         return ResponseEntity.status(HttpStatus.OK).body(calculationService.calculations(dtoCalculations));
     }
 
+    /**
+     * Upload choose file
+     * @param file
+     * @return Server response status
+     */
     @PostMapping(value = "/upload")
     public ResponseEntity handleFileUpload(@RequestBody MultipartFile file) {
         if (!file.isEmpty()) {
@@ -42,6 +52,11 @@ public class MainController {
         return ResponseEntity.status(HttpStatus.BAD_REQUEST).build();
     }
 
+    /**
+     * Creating a file to save data
+     * @param dtoCalculations
+     * @return Server response status
+     */
     @PostMapping(value = "/createDownloadFileResult")
     public ResponseEntity createResultToFiles(@RequestBody DTOCalculations dtoCalculations) {
         try {
@@ -66,6 +81,11 @@ public class MainController {
         }
     }
 
+    /**
+     * Download data file
+     * @param filename
+     * @return
+     */
     @GetMapping(value = "/downloadFile/{file}")
     public ResponseEntity<Resource> downloadFile(@PathVariable("file") String filename) {
         File filePath = new File("temp");

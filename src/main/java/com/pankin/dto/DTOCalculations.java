@@ -1,5 +1,6 @@
 package com.pankin.dto;
 
+
 public class DTOCalculations {
     private String rawData;
     private String data;
@@ -10,8 +11,7 @@ public class DTOCalculations {
         this.rawData = rawData;
     }
 
-    public DTOCalculations() {
-    }
+    public DTOCalculations() {}
 
     public String getData() {
         return data;

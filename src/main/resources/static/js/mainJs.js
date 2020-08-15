@@ -6,7 +6,6 @@ function pageLoadedHandler(e) {
 	document.getElementById('saveResult').addEventListener('click', saveResult, false);
 }
 
-
 function saveResult(evt){
 	evt.preventDefault();	
 	var enterText = document.getElementById('enterText').value;	
@@ -28,8 +27,6 @@ function saveResult(evt){
 	sReq.send(JSON.stringify({rawData:rawData}));	     
 	
 }
-
-
 
 function loadResult(evt){
 	evt.preventDefault();	
@@ -83,4 +80,3 @@ function calculate(){
         xhttp.send(JSON.stringify({rawData:rawData}));
 	}
 }
-
